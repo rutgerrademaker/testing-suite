@@ -10,29 +10,33 @@ jobs:
         uses: actions/checkout@v2
       - name: Test
         run: |
-          pwd
-          ls -al
-          composer install --dev --prefer-dist --no-scripts --no-progress --optimize-autoloader --no-interaction -vvv
-          composer show
-          composer exec -v grumphp run
+          composer2 install --dev --prefer-dist --no-scripts --no-progress --optimize-autoloader --no-interaction -vvv
+          composer2 show
+          composer2 exec -v grumphp run
         shell: bash
   PHP-8-0:
     runs-on: ubuntu-latest
     container:
       image: srcoder/development-php:php80-fpm
     steps:
-      - run: |
-          composer install --dev --prefer-dist --no-scripts --no-progress --optimize-autoloader --no-interaction -vvv
-          composer show
-          composer exec -v grumphp run
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Test
+        run: |
+          composer2 install --dev --prefer-dist --no-scripts --no-progress --optimize-autoloader --no-interaction -vvv
+          composer2 show
+          composer2 exec -v grumphp run
         shell: bash
   PHP-7-4:
     runs-on: ubuntu-latest
     container:
       image: srcoder/development-php:php74-fpm
     steps:
-      - run: |
-          composer install --dev --prefer-dist --no-scripts --no-progress --optimize-autoloader --no-interaction -vvv
-          composer show
-          composer exec -v grumphp run
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Test
+        run: |
+          composer2 install --dev --prefer-dist --no-scripts --no-progress --optimize-autoloader --no-interaction -vvv
+          composer2 show
+          composer2 exec -v grumphp run
         shell: bash
