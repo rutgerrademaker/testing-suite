@@ -6,16 +6,16 @@ jobs:
     container:
       image: srcoder/development-php:php81-fpm
     steps:
-      - run: .github/scripts/testing-suite.sh
+      - run: ./.github/scripts/testing-suite.sh
   PHP-8-0:
     runs-on: ubuntu-latest
     container:
       image: srcoder/development-php:php80-fpm
     steps:
-      - run: .github/scripts/testing-suite.sh
+      - run: ./.github/scripts/testing-suite.sh
   PHP-7-4:
     runs-on: ubuntu-latest
     container:
       image: srcoder/development-php:php74-fpm
     steps:
-      - run: .github/scripts/testing-suite.sh
+      - run: ./.github/scripts/testing-suite.sh
