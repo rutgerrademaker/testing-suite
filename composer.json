@@ -71,7 +71,9 @@
             "/phpstan.neon",
             "/phpcs.xml",
             "/phpmd.xml",
-            "/phpunit.xml"
+            "/phpunit.xml",
+            "/grumphp.yml",
+            "/pdepend.xml"
         ]
     },
     "config": {
