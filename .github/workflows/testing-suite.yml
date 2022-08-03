@@ -6,7 +6,9 @@ jobs:
     container:
       image: srcoder/development-php:php81-fpm
     steps:
-      - run: |
+      - name: Checkout
+        uses: actions/checkout@v2
+        run: |
           pwd
           ls -al
           composer install --dev --prefer-dist --no-scripts --no-progress --optimize-autoloader --no-interaction -vvv
